@@ -1,0 +1,20 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">GPT-3</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </nav> -->
+
+<header class="d-flex justify-content-center py-3">
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/" class="nav-link<%if (slug == "/"){ %> active" aria-current="page <% } %>">Home</a></li>
+    <% flux.forEach(function(f) { %>
+      <li class="nav-item"><a href="/news/<%= f.id %>" class="nav-link<%if (slug == f.id){ %> active" aria-current="page <% } %>"><%= f.titre %></a></li>
+  <% }); %>
+  </ul>
+</header>

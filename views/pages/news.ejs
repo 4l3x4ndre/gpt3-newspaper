@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+
+        <div class="container-fluid">
+            <h1><%= feed.title %></h1>
+        </div>          
+
+        <% feed.items.forEach(function(f) { %>
+            <h3><a href="/article/<%= f.md5 %>"><%= f.title %></a></h3>
+            <p><a href="/article/<%= f.md5 %>"><%= f.content %></a></p>
+        <% }) %>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

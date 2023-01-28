@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+
+        <div class="container-fluid">
+            <h1><%= article.title %></h1>
+            <h1 class="text-danger"><%= article.gpt_title %></h1>
+
+            <div class="container">
+                <%= short_text %>
+                <span class="text-secondary"><%= trailing_text %></span>
+            </div>
+
+            <div class="container text-danger">
+                <%= article.gpt_contenu %>
+            </div>
+            <div class="container text-warning">
+                <%= article.gpt_resume %>
+            </div>
+
+            <% if (article.pubDate) { %>
+            <div class="d-flex flex-row-reverse">
+                <div class="p-2">
+                <%= article.pubDate %>
+                </div>
+            </div>
+            <% } %>
+
+        </div>          
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
